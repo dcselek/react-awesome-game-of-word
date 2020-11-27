@@ -1,14 +1,17 @@
 .container{
-    background-color: honeydew;
-    max-width: 520px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 9vw;
-    height: 250px;
+    background-color: var(--c-primary);
+    max-width: 500px;
+    margin-top: auto;
+    height: 500px;
     border-top-left-radius: 0.5em;
     border-top-right-radius: 0.5em;
     color: black;
     overflow-y: auto;
+    order: 3;
+
+    @media screen and (max-height: 960px) {
+        margin-top: 30px;
+    }
 
     table{
         font-size: 1.5rem;
@@ -19,7 +22,7 @@
 
         th{
             padding: 20px;
-            color: indigo;
+            color: var(--c-secondary);
             font-style: italic;
         }
         

@@ -3,6 +3,10 @@
   max-width: 75%;
   margin-left: auto;
   margin-right: auto;
-  height: 100vh;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  @media screen and (max-height: 1024px) {
+    overflow: visible;
+  }
 }
