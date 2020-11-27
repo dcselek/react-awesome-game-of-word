@@ -1,0 +1,32 @@
+.container{
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid;
+    border-color: var(--c-primary);
+
+    nav{
+        font-size: 16px;
+        display: flex;
+        height: 3em;
+        align-items: center;
+        margin-bottom: 1em;
+        margin-top: 1em;
+
+        button{
+            color: var(--c-primary);
+            height: 2.5em;
+            font-weight: bold;
+            width: 6em;
+            margin-left: 2em;
+            border-radius: 0.7em;
+            border: 0px;
+            background-color: var(--c-secondary);
+            box-shadow: var(--bs-button); 
+        }
+
+        button:active{
+            box-shadow: var(--bs-button-active);
+        
+        }
+    }
+}

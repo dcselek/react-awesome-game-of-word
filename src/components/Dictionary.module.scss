@@ -1,0 +1,33 @@
+.container{
+    background-color: honeydew;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 9vw;
+    height: 250px;
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+    color: black;
+    overflow-y: auto;
+
+    table{
+        font-size: 1.5rem;
+        max-width: 250px;
+        margin-left: auto;
+        margin-right: auto;
+
+
+        th{
+            padding: 20px;
+            color: indigo;
+            font-style: italic;
+        }
+        
+        
+    }
+    
+
+    
+
+}
+
