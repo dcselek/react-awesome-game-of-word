@@ -6,12 +6,13 @@ class TextArea extends Component {
     state = { turkce: "", english: "", }
 
     handleChange = (word) => {
-        this.setState({ [word.target.name]: word.target.value })
+        this.setState({ [word.target.name]: word.target.value.trim() })
     }
 
 
     handleClick = () => {
-
+        
+        
         this.props.callback({
             turkce: this.state.turkce,
             english: this.state.english
@@ -21,8 +22,8 @@ class TextArea extends Component {
     render() {
         return (
             <>
-                <div>
-                    <form className={styles.container}  >
+                <div className={styles.container}>
+                    <form className={styles.form}  >
                         <div className={styles.form1}>
                             <label htmlFor="turkce">Türkçe</label>
                             <textarea rows="5" cols="25"
@@ -41,9 +42,9 @@ class TextArea extends Component {
                                 onChange={this.handleChange}
                             />
                         </div>
-                        <button className={styles.button} onClick={this.handleClick} type="button">Save!</button>
+                        
                     </form>
-
+                    <button className={styles.button} onClick={this.handleClick} type="button">Save!</button>
                 </div>
 
             </>

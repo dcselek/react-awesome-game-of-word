@@ -1,7 +1,9 @@
 .container{
     background-color: var(--c-primary);
-    max-width: 500px;
+    width: 420px;
     margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
     height: 500px;
     border-top-left-radius: 0.5em;
     border-top-right-radius: 0.5em;
@@ -11,6 +13,10 @@
 
     @media screen and (max-height: 960px) {
         margin-top: 30px;
+    }
+    @media screen and (max-width: 864px) {
+        max-width: 250px;
+        height: 300px;
     }
 
     table{
