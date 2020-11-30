@@ -6,7 +6,7 @@ import Dictionary from './components/Dictionary';
 
 class App extends Component {
 
-  state = { dictionary: [], }
+  state = { dictionary: [] }
 
   dictionaryCallBack = (data) => {
     let dictionary;
@@ -20,20 +20,28 @@ class App extends Component {
 
     localStorage.setItem("dictionary", JSON.stringify(dictionary));
 
-    this.setState( {
-      dictionary: [...this.state.dictionary,data]
-    })
-
-    let dc = this.state.dictionary;
-    console.log({dictionary,dc})
-    
+    this.updateDictionary(data);
   }
 
-  
-  
+  updateDictionary(data) {
+    if(this.state.dictionary === null){
+      this.setState({
+        dictionary: [data]
+      })
+    }else{
+      this.setState({
+        dictionary: [...this.state.dictionary,data]
+      })
+    }
+
+    console.log(this.state.dictionary)
+
+  }
+
+
 
   componentDidMount() {
-    this.setState( {
+    this.setState({
       dictionary: JSON.parse(localStorage.getItem("dictionary"))
     })
   }
