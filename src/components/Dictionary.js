@@ -7,7 +7,22 @@ class Dictionary extends Component {
 
     render() {
 
-        
+        let td;
+
+        if(this.props.dictionary !== null){
+            td = this.props.dictionary.map((word,key) => (
+                <tr key={key} >
+                    <td>
+                        {word.turkce}
+                    </td>
+                    <td>
+                        {word.english}
+                    </td>
+                </tr>
+                ))
+        }else {
+            <></>
+        }
 
         return (
             <div className={styles.container}>
@@ -19,16 +34,7 @@ class Dictionary extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {this.props.dictionary.map((word,key) => (
-                            <tr key={key} >
-                                <td>
-                                    {word.turkce}
-                                </td>
-                                <td>
-                                    {word.english}
-                                </td>
-                            </tr>
-                            ))}       
+                        {td}       
                     </tbody>
                 </table>
             </div>
