@@ -3,6 +3,7 @@ import './App.scss'
 import TextArea from './components/TextArea';
 import Nav from './components/Nav'
 import Dictionary from './components/Dictionary';
+import Typing from 'react-typing-animation';
 
 class App extends Component {
 
@@ -27,30 +28,30 @@ class App extends Component {
     let removeElement = this.state.dictionary[elementKey]
 
     let filterState = this.state.dictionary.filter(word => word !== removeElement)
-    
-    
+
+
 
     this.setState({
       dictionary: filterState
     })
-    
+
     this.afterRemoveStorage(filterState)
   }
 
-  afterRemoveStorage(filterState){
+  afterRemoveStorage(filterState) {
     localStorage.removeItem("dictionary");
     localStorage.setItem("dictionary", JSON.stringify(filterState));
   }
 
   updateDictionary(data) {
 
-    if(this.state.dictionary === null){
+    if (this.state.dictionary === null) {
       this.setState({
         dictionary: [data]
       })
-    }else{
+    } else {
       this.setState({
-        dictionary: [...this.state.dictionary,data]
+        dictionary: [...this.state.dictionary, data]
       })
     }
 
@@ -72,6 +73,11 @@ class App extends Component {
     return (
       <div className="App">
         <Nav />
+        <Typing>
+          <p>Ezberlemek istediğiniz kelimeleri kaydedebilir ve <br />
+          "Game of Word" butonuna basarak ezberini kolaylaştıracak<br />
+          oyunumuza gidebilirsin!</p>
+        </Typing>
         <TextArea callback={this.dictionaryCallBack} />
         <Dictionary dictionary={this.state.dictionary} removeWord={this.removeWord} />
       </div>
