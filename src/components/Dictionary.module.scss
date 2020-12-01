@@ -32,6 +32,7 @@
 
         @media screen and (max-width: 864px) {
             font-size: 0.9rem;
+            width: 50%;
         }
 
 
@@ -39,9 +40,9 @@
             padding: 20px;
             color: var(--c-secondary);
             font-style: italic;
-            @media screen and (max-width: 320px) {
+            @media screen and (max-width: 864px) {
                 padding: 5px;
-                width: 5px;
+                width: 5;
             }
         }
         
