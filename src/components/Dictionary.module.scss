@@ -8,6 +8,7 @@
     border-top-left-radius: 0.5em;
     border-top-right-radius: 0.5em;
     color: black;
+    overflow-x: auto;
     overflow-y: auto;
     order: 3;
 
@@ -15,33 +16,45 @@
         margin-top: 30px;
     }
     @media screen and (max-width: 864px) {
-        max-width: 250px;
+        max-width: 275px;
         height: 300px;
+    }
+    @media screen and (max-width: 320px) {
+        max-width: 230px;
     }
 
     table{
         font-size: 1.5rem;
-        max-width: 250px;
+        width: 100%;
         margin-left: auto;
         margin-right: auto;
+        
+
+        @media screen and (max-width: 864px) {
+            font-size: 0.9rem;
+        }
 
 
         th{
             padding: 20px;
             color: var(--c-secondary);
             font-style: italic;
+            @media screen and (max-width: 320px) {
+                padding: 5px;
+                width: 5px;
+            }
         }
         
         tbody{
 
-            tr{
-                padding: 5px;
-            }
+            
             .delete{
                 vertical-align: middle;
                 color: red;
                 cursor: pointer;
             }
+
+           
         }
     }
     
