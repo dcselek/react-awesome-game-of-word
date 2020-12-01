@@ -32,7 +32,17 @@
             font-style: italic;
         }
         
-        
+        tbody{
+
+            tr{
+                padding: 5px;
+            }
+            .delete{
+                vertical-align: middle;
+                color: red;
+                cursor: pointer;
+            }
+        }
     }
     
 

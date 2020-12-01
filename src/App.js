@@ -23,7 +23,27 @@ class App extends Component {
     this.updateDictionary(data);
   }
 
+  removeWord = (elementKey) => {
+    let removeElement = this.state.dictionary[elementKey]
+
+    let filterState = this.state.dictionary.filter(word => word !== removeElement)
+    
+    
+
+    this.setState({
+      dictionary: filterState
+    })
+    
+    this.afterRemoveStorage(filterState)
+  }
+
+  afterRemoveStorage(filterState){
+    localStorage.removeItem("dictionary");
+    localStorage.setItem("dictionary", JSON.stringify(filterState));
+  }
+
   updateDictionary(data) {
+
     if(this.state.dictionary === null){
       this.setState({
         dictionary: [data]
@@ -53,7 +73,7 @@ class App extends Component {
       <div className="App">
         <Nav />
         <TextArea callback={this.dictionaryCallBack} />
-        <Dictionary dictionary={this.state.dictionary} />
+        <Dictionary dictionary={this.state.dictionary} removeWord={this.removeWord} />
       </div>
     );
   }
