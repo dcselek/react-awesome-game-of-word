@@ -4,6 +4,7 @@ import TextArea from './components/TextArea';
 import Nav from './components/Nav'
 import Dictionary from './components/Dictionary';
 import Typing from 'react-typing-animation';
+import alertify from 'alertifyjs'
 
 class App extends Component {
 
@@ -36,6 +37,7 @@ class App extends Component {
     })
 
     this.afterRemoveStorage(filterState)
+    alertify.notify('Kelime Silindi! / Word Deleted!','error')
   }
 
   afterRemoveStorage(filterState) {
