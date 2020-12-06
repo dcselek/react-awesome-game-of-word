@@ -1,5 +1,6 @@
 import React, {useContext} from 'react';
 import ThemeContext from '../contexts/ThemeContext'
+import {FiSun,FiMoon} from 'react-icons/fi'
 
 const ThemeButton = () => {
     
@@ -7,7 +8,7 @@ const ThemeButton = () => {
     
     return (
         <div>
-            <button onClick={toggleTheme}>Theme {theme === "dark" ?  "light" : "dark"}</button>
+            <button onClick={toggleTheme}>Theme <br/> {theme === "dark" ? <FiSun/> : <FiMoon/>}</button>
         </div>
     );
 }
