@@ -1,55 +1,67 @@
-import React, { Component } from 'react';
+import React, { useContext,useState } from 'react';
 import styles from './TextArea.module.scss'
+import WordContext from '../contexts//Wordcontext'
 
-class TextArea extends Component {
 
-    state = { turkce: "", english: "", }
+const TextArea = () => {
+    const { changeDictionary } = useContext(WordContext);
+    const [turkce,setTurkce] = useState("")
+    const [english,setEnglish] = useState("")
 
-    handleChange = (word) => {
-        this.setState({ [word.target.name]: word.target.value.trim() })
+
+
+    const handleChange = (word) => {
+        if(word.target.name === "turkce"){
+            setTurkce( word.target.value.trim())
+        }else{
+            setEnglish( word.target.value.trim())
+        }
     }
 
 
-    handleClick = () => {
+     const handleClick = () => {
+
+
         
-        
-        this.props.callback({
-            turkce: this.state.turkce,
-            english: this.state.english
+
+        changeDictionary({
+            turkce: turkce,
+            english: english
         })
     }
 
-    render() {
-        return (
-            <>
-                <div className={styles.container}>
-                    <form className={styles.form}  >
-                        <div className={styles.form1}>
-                            <label htmlFor="turkce">Türkçe</label>
-                            <textarea rows="5" cols="25"
-                                id="turkce"
-                                name="turkce"
-                                placeholder="metin girin"
-                                onChange={this.handleChange}
-                            />
-                        </div>
-                        <div className={styles.form2}>
-                            <label htmlFor="english">English</label>
-                            <textarea rows="5" cols="25"
-                                id="english"
-                                name="english"
-                                placeholder="enter text"
-                                onChange={this.handleChange}
-                            />
-                        </div>
-                        
-                    </form>
-                    <button className={styles.button} onClick={this.handleClick} type="button">Save!</button>
-                </div>
+    
 
-            </>
-        );
-    }
+    return (
+        <>
+            <div className={styles.container}>
+                <form className={styles.form}  >
+                    <div className={styles.form1}>
+                        <label htmlFor="turkce">Türkçe</label>
+                        <textarea rows="5" cols="25"
+                            id="turkce"
+                            name="turkce"
+                            placeholder="metin girin"
+                            onChange={handleChange}
+                        />
+                    </div>
+                    <div className={styles.form2}>
+                        <label htmlFor="english">English</label>
+                        <textarea rows="5" cols="25"
+                            id="english"
+                            name="english"
+                            placeholder="enter text"
+                            onChange={handleChange}
+                        />
+                    </div>
+
+                </form>
+                <button className={styles.button} onClick={handleClick} type="button">Save!</button>
+            </div>
+
+        </>
+    );
 }
+
 
 export default TextArea;

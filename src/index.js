@@ -4,13 +4,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'alertifyjs/build/css/alertify.css';
+import { WordProvider } from './contexts/Wordcontext';
 
 
 ReactDOM.render(
-  
+  <WordProvider>
     <React.StrictMode>
       <App />
-    </React.StrictMode>,
+    </React.StrictMode>
+  </WordProvider>,
   document.getElementById('root'),
     
 );

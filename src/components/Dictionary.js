@@ -1,56 +1,47 @@
-import React, { Component } from 'react';
+import React, { useContext } from 'react';
 import styles from './Dictionary.module.scss'
 import { AiOutlineClose } from 'react-icons/ai'
+import WordContext from '../contexts/Wordcontext'
 
-class Dictionary extends Component {
-    
+const Dictionary = () => {
 
-    
+    const { dictionary,removeWord } = useContext(WordContext);
+    let td;
 
 
-    render() {
+    if (dictionary !== null) {
+        td = dictionary.map((word, key) => (
 
-        let td;
-        
-
-        if (this.props.dictionary !== null) {
-            td = this.props.dictionary.map((word,key) => (
-                
-                    <tr key={key} >
-                        <td>
-                            {word.turkce}
-                        </td>
-                        <td>
-                            {word.english}
-                        </td>
-                        <AiOutlineClose onClick={()=> this.props.removeWord(key)} className={styles.delete} />
-                    </tr>
-                    
-                    
-                
-            ))
-
-            
-        } else {
-            <></>
-        }
-
-        return (
-            <div className={styles.container}>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Türkçe</th>
-                            <th>English</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {td}
-                    </tbody>
-                </table>
-            </div>
-        );
+            <tr key={key} >
+                <td>
+                    {word.turkce}
+                </td>
+                <td>
+                    {word.english}
+                </td>
+                <AiOutlineClose onClick={() => removeWord(key)} className={styles.delete} />
+            </tr>
+        ))
+    } else {
+        <></>
     }
+
+    return (
+        <div className={styles.container}>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Türkçe</th>
+                        <th>English</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {td}
+                </tbody>
+            </table>
+        </div>
+    );
 }
+
 
 export default Dictionary;
