@@ -8,7 +8,7 @@ const ThemeButton = () => {
     
     return (
         <div>
-            <button onClick={toggleTheme}>Theme <br/> {theme === "dark" ? <FiSun/> : <FiMoon/>}</button>
+            <button onClick={toggleTheme}>Theme <br/> {theme === "dark" ? <FiMoon/> : <FiSun/>}</button>
         </div>
     );
 }
