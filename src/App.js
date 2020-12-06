@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component} from 'react';
 import './App.scss'
 import TextArea from './components/TextArea';
 import Nav from './components/Nav'
 import Dictionary from './components/Dictionary';
 import Typing from 'react-typing-animation';
 import alertify from 'alertifyjs'
+import {ThemeProvider} from './contexts/ThemeContext';
 
 class App extends Component {
 
@@ -73,18 +74,22 @@ class App extends Component {
 
 
     return (
-      <div className="App">
-        <Nav />
-        <Typing>
-          <p>Ezberlemek istediğiniz kelimeleri kaydedebilir ve <br />
-          "Game of Word" butonuna basarak ezberini kolaylaştıracak<br />
-          oyunumuza gidebilirsin!</p>
-        </Typing>
-        <TextArea callback={this.dictionaryCallBack} />
-        <Dictionary dictionary={this.state.dictionary} removeWord={this.removeWord} />
-      </div>
+      <ThemeProvider>
+          <div className="App">
+              <Nav />
+              <Typing>
+                <p>Ezberlemek istediğiniz kelimeleri kaydedebilir ve <br />
+                "Game of Word" butonuna basarak ezberini kolaylaştıracak<br />
+                oyunumuza gidebilirsin!</p>
+              </Typing>
+              <TextArea callback={this.dictionaryCallBack} />
+              <Dictionary dictionary={this.state.dictionary} removeWord={this.removeWord} />
+          </div>
+      </ThemeProvider>
     );
   }
 }
+
+
 
 export default App;

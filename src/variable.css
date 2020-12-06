@@ -1,7 +1,22 @@
 :root{
+    --c-background: linear-gradient(100.29deg, #352e38 -0.68%, #16191D 74.03%);
     --c-primary: #D6E1EF;
     --c-secondary: linear-gradient(303.77deg, #2C333A -71.57%, #1C1E22 59.28%, #121416 59.28%);
+    --c-text-area-color: black;
     --bg-textarea: linear-gradient(303.77deg, #2C333A -51.57%, #1C1E22 20.28%, #121416 59.28%);
+    --bs-textarea: inset -2px -2px 10px rgba(255, 255, 255, 0.05), inset 2px 3px 10px #070709;
     --bs-button: -4px -2px 16px rgba(255, 255, 255, 0.109), 4px 4px 18px rgba(0, 0, 0, 0.5);
     --bs-button-active: inset -2px -2px 10px rgba(255, 255, 255, 0.05), inset 2px 3px 10px #070709;
+
+}
+
+.light:root{
+    
+    --c-background: linear-gradient(180deg, #F1F5F8 0%, #EBF3FA 0.01%, #DDE7F3 53.92%, #E6F0F9 100%);
+    --c-primary: #31456A;
+    --c-text-area-color: white;
+    --bg-textarea: #E3EDF7;
+    --bs-textarea: inset -1px -1px 8px #FFFFFF, inset 3px 3px 8px rgba(136, 165, 191, 0.38);
+    --bs-button: -1px 0px 16px #FFFFFF, 6px 6px 16px rgba(136, 165, 191, 0.48);
+    --bs-button-active: inset -3px -3px 7px #FFFFFF, inset 3px 3px 7px rgba(136, 165, 191, 0.48);
 }

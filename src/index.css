@@ -1,5 +1,4 @@
 @import-normalize;
-@import 'variable.css';
 
 body {
   margin: 0;
@@ -8,8 +7,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(100.29deg, #352e38 -0.68%, #16191D 74.03%);
-  color: var(--c-primary);
+  
   
 }
 
