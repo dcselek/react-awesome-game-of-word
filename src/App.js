@@ -1,4 +1,4 @@
-import React, { useEffect,useContext} from 'react';
+import React, { useLayoutEffect,useContext} from 'react';
 import './App.scss'
 import TextArea from './components/TextArea';
 import Nav from './components/Nav'
@@ -13,11 +13,11 @@ const App = () => {
   const { setDictionary } = useContext(WordContext);
 
   
-  useEffect(() => {
+  useLayoutEffect(() => {
     setDictionary(
      JSON.parse(localStorage.getItem("dictionary"))
     )
-  }, [])
+  })
 
     return (
       <ThemeProvider>
