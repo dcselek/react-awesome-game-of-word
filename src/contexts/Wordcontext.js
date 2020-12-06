@@ -48,7 +48,7 @@ export const WordProvider = ({children}) => {
         )
     
         afterRemoveStorage(filterState)
-        alertify.notify('Kelime Silindi! / Word Deleted!','error')
+        alertify.notify('Word Deleted ❕','error')
     }
     
     const afterRemoveStorage = (filterState) => {

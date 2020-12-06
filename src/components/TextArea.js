@@ -1,36 +1,39 @@
-import React, { useContext,useState } from 'react';
+import React, { useContext, useState } from 'react';
 import styles from './TextArea.module.scss'
 import WordContext from '../contexts//Wordcontext'
+import alertify from 'alertifyjs'
 
 
 const TextArea = () => {
     const { changeDictionary } = useContext(WordContext);
-    const [turkce,setTurkce] = useState("")
-    const [english,setEnglish] = useState("")
+    const [turkce, setTurkce] = useState("")
+    const [english, setEnglish] = useState("")
 
 
 
     const handleChange = (word) => {
-        if(word.target.name === "turkce"){
-            setTurkce( word.target.value.trim())
-        }else{
-            setEnglish( word.target.value.trim())
+        if (word.target.name === "turkce") {
+            setTurkce(word.target.value.trim())
+        }
+        else {
+            setEnglish(word.target.value.trim())
         }
     }
 
 
-     const handleClick = () => {
+    const handleClick = () => {
 
-
-        
 
         changeDictionary({
             turkce: turkce,
             english: english
         })
+
+        alertify.notify("Words Saved 🎉" ,'success')
+
     }
 
-    
+
 
     return (
         <>

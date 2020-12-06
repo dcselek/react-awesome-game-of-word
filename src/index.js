@@ -9,9 +9,7 @@ import { WordProvider } from './contexts/Wordcontext';
 
 ReactDOM.render(
   <WordProvider>
-    <React.StrictMode>
       <App />
-    </React.StrictMode>
   </WordProvider>,
   document.getElementById('root'),
     
