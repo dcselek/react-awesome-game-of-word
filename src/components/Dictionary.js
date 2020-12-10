@@ -19,7 +19,7 @@ const Dictionary = () => {
                 <td>
                     {word.english}
                 </td>
-                <AiOutlineClose onClick={() => removeWord(key)} className={styles.delete} />
+                <td><AiOutlineClose onClick={() => removeWord(key)} className={styles.delete} /></td>
             </tr>
         ))
     } else {
@@ -33,6 +33,7 @@ const Dictionary = () => {
                     <tr>
                         <th>Türkçe</th>
                         <th>English</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>

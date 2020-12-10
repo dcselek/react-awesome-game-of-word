@@ -1,39 +1,39 @@
-import React, { useEffect,useContext} from 'react';
+import React, { useEffect, useContext } from 'react';
+import { Route, Switch } from 'react-router-dom'
 import './App.scss'
-import TextArea from './components/TextArea';
 import Nav from './components/Nav'
-import Dictionary from './components/Dictionary';
-import Typing from 'react-typing-animation';
+import Game from './components/Game'
 
-import {ThemeProvider} from './contexts/ThemeContext';
+
+import { ThemeProvider } from './contexts/ThemeContext';
 import WordContext from './contexts/Wordcontext'
+import MainLayout from './components/MainLayout';
 
 const App = () => {
 
   const { setDictionary } = useContext(WordContext);
 
-  
+
   useEffect(() => {
     setDictionary(
-     JSON.parse(localStorage.getItem("dictionary"))
+      JSON.parse(localStorage.getItem("dictionary"))
     )
-  },[setDictionary])
+  }, [setDictionary])
 
-    return (
-      <ThemeProvider>
-          <div className="App">
-              <Nav />
-              <Typing>
-                <p>Ezberlemek istediğiniz kelimeleri kaydedebilir ve <br />
-                "Game of Word" butonuna basarak ezberini kolaylaştıracak<br />
-                oyunumuza gidebilirsin!</p>
-              </Typing>
-              <TextArea  />
-              <Dictionary />
-          </div>
-      </ThemeProvider>
-    );
   
+
+  return (
+    <ThemeProvider>
+      <div className="App">
+        <Nav />
+        <Switch>
+          <Route exact path="/" component={MainLayout} />
+          <Route exact path="/game" component={Game} />
+        </Switch>
+      </div>
+    </ThemeProvider>
+  );
+
 }
 
 

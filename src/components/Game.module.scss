@@ -1,0 +1,56 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  max-width: 75%;
+  justify-content: center;
+  margin-right: auto;
+  margin-left: auto;
+
+  h2 {
+    font-size: 7rem;
+  }
+
+  span {
+    font-size: 2rem;
+    padding-bottom: 20px;
+  }
+
+  .gameButtons {
+    display: flex;
+    justify-content: center;
+    button {
+      font-size: 2rem;
+      width: 10rem;
+      margin: 15px;
+      padding: 20px;
+      border-radius: 10px;
+      border: none;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .false {
+      background-color: red;
+    }
+
+    .true {
+      background-color: #4bb543;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    h2{
+        font-size: 2.5rem;
+    }
+
+    span{
+        font-size: 1.5rem;
+    }
+
+    button{
+        font-size: 1rem;
+    }
+
+}
+}

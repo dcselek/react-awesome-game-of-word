@@ -3,12 +3,10 @@
 
 .App {
   text-align: center;
-  max-width: 75%;
   margin-left: auto;
   margin-right: auto;
   overflow: hidden;
   display: flex;
-  overflow-y: auto;
   flex-direction: column;
   
   @media screen and (min-width: 1024px) {
@@ -16,6 +14,7 @@
   }
   @media screen and (max-width: 1024px)and(min-width: 768px) {
     height: 100vh;
+    
   }
   
 }

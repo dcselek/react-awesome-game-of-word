@@ -32,8 +32,6 @@ export const WordProvider = ({children}) => {
               [...dictionary, word]
             )
           }
-      
-          console.log(dictionary)
     }
 
     const removeWord = (elementKey) => {
@@ -60,7 +58,7 @@ export const WordProvider = ({children}) => {
         changeDictionary,dictionary,setDictionary,removeWord
     } 
 
-
+    
     return <WordContext.Provider value={value}> {children} </WordContext.Provider>
 }
 
