@@ -19,6 +19,7 @@
     flex-direction: column;
     margin-top: 5em;
     margin-right: 2em;
+    
 
     @media screen and (max-width: 1024px) {
         margin-top: 3em;
@@ -44,6 +45,7 @@
         resize: none;
         font-size: 2em;
         border-radius: 0.5em;
+        padding: 10px;
         
     }
 }
@@ -76,6 +78,7 @@
         color: var(--c-primary);
         resize: none;
         font-size: 2em;
+        padding: 10px;
     }
 }
 
