@@ -12,7 +12,7 @@ Kelime ezberlemek ve kelimeleri daha iyi hatırlamak için hem oyun hem kelime d
 
 ## :robot: Game of Word hakkında:
 
-Ekrana gelen daha önce kaydettiğiniz kelimelerin telafuzunu duyarak kelimelerin türkçe karşılıklarını söylemeye çalışın eğer başarılı olursanız "Hatırladım" butonuna, başarısız olursanız "Hatırlamadım" butonuna tıklayarak devam edebilirsiniz. Her başarılı hatırlama +10 puan getirir. 
+Ekrana gelen daha önce kaydettiğiniz kelimelerin telafuzunu duyarak kelimelerin türkçe karşılıklarını söylemeye çalışın eğer başarılı olursanız ":+1:" butonuna, başarısız olursanız ":-1:" butonuna tıklayarak devam edebilirsiniz. Her başarılı hatırlama +10 puan getirir. 
 
 
 ### Tech
