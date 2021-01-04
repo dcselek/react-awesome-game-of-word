@@ -1,3 +1,4 @@
+import {Link} from "react-router-dom"
 import React, { useContext, useState, } from 'react';
 import WordContext from '../contexts/Wordcontext';
 import styles from './Game.module.scss'
@@ -11,16 +12,39 @@ function Game() {
     let gameWord = "";
 
     if(dictionary === null || dictionary.length === 0 ){
-        gameWord="Add a New Word 😀"
+        gameWord="First add a new word 😀"
+        //Return to "Main Page: / " if no words added.
+        return (
+            <div className={styles.container}>
+                <h2>{gameWord}</h2>
+                <div className={styles.gameButtons}>
+               <Link to="/" className={styles.link}><button>Click me!</button></Link>
+               
+                </div>
+            </div>
+        );
     }else{
         
         if( count === dictionary.length ){
             gameWord = "Words Finish! ✔️"
+            //After finishing the game, it will ask if you want to add more words. 
+            //Thus, redirects to main page to add more words if a person wants.
+            return (
+                <div className={styles.container}>
+                    <h2>{gameWord}</h2>
+                    <h1>Want to add more words ?</h1>
+                    
+                    
+                    <div className={styles.gameButtons}>
+                   <Link to="/" className={styles.link}><button>Click me!</button></Link>
+                   
+                    </div>
+                </div>
+            );
         }else{
             gameWord = dictionary[count].english
         }
     }
-
     
 
     
